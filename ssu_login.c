@@ -51,10 +51,6 @@ int check_idpw()
 {
   char id[INPUT_BUFFER]={0,}, pw[INPUT_BUFFER] = {0, };
 
-  for(int i = 0; i < acc_cnt; i++) {
-    printf(1, "%s-%s\n", userID[i], pwdID[i]);
-  }
-
   printf(1, "Username: ");
   parse_word(0, id); 
   printf(1, "Password: ");
@@ -76,11 +72,9 @@ int check_idpw()
 
 int main(int argc, char *argv[])
 {
-  printf(1, "Hello?");
   int pid, wpid;
   get_user_list();
 
-  printf(1, "Hello!");
   while (1)
   {
     if (check_idpw())
