@@ -197,7 +197,7 @@ fork(void)
     np->state = UNUSED;
     return -1;
   }
-  np->trace_mask = (curproc->trace_mask & 2); 
+  np->trace_mask = (np->trace_mask > 0) ? np->trace_mask : 0;
   np->sz = curproc->sz;
   np->parent = curproc;
   *np->tf = *curproc->tf;
