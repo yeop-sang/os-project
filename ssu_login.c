@@ -45,6 +45,7 @@ void get_user_list()
     parse_word(fd, userID[i]);
     parse_word(fd, pwdID[i]);
   }
+  close(fd);
 }
 
 int check_idpw()
