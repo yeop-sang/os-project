@@ -101,3 +101,17 @@ sys_memsize(void)
 
   return size;
 }
+
+int
+sys_trace(void)
+{
+  int n;
+  struct proc* p = myproc();
+
+  if(argint(0, &n) < 0)
+    return -1;
+
+  p->trace_mask = n;
+
+  return 0;
+}

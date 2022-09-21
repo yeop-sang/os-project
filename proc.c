@@ -87,6 +87,7 @@ allocproc(void)
 
 found:
   p->state = EMBRYO;
+  p->trace_mask = 0;
   p->pid = nextpid++;
 
   release(&ptable.lock);
@@ -196,6 +197,7 @@ fork(void)
     np->state = UNUSED;
     return -1;
   }
+  np->trace_mask = (curproc->trace_mask & 2); 
   np->sz = curproc->sz;
   np->parent = curproc;
   *np->tf = *curproc->tf;

@@ -26,6 +26,7 @@ int uptime(void);
 
 // my system call
 int memsize(void);
+int trace(int);
 
 // ulib.c
 int stat(const char*, struct stat*);
